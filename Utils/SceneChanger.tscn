@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://n2adqeicfa7"]
+[gd_scene load_steps=2 format=3 uid="uid://n2adqeicfa7"]
+
+[ext_resource type="Script" path="res://Utils/Scripts/SceneChanger.gd" id="1_w6r2c"]
 
 [node name="SceneChanger" type="Button"]
+script = ExtResource("1_w6r2c")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
