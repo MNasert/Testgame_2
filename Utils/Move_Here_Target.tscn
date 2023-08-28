@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://vmh2prf6swv1"]
+[gd_scene load_steps=2 format=3 uid="uid://vmh2prf6swv1"]
+
+[ext_resource type="Script" path="res://Utils/Scripts/Move_Here_Target.gd" id="1_iutbd"]
 
 [node name="Move_Here_Target" type="Node2D"]
+script = ExtResource("1_iutbd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

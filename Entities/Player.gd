@@ -48,6 +48,7 @@ func shoot(inputs: Array[bool]):
 	new_bullet.init(self.global_position, (Vector2(1, 0) * $Body.flip_h + Vector2(-1, 0) * $Body.flip_h),
 					self.damage, self.pierce)
 	get_tree().get_root().add_child(new_bullet)
+	# $Weapon.play("default", ((fps of anim) * self.firerate) * (frames_of_anim))
 	self.can_shoot = false
 	$FirerateTimeout.start(1./self.firerate)
 	
