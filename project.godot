@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Testgame_2"
+run/main_scene="res://MenuScreens/MainMenu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 
 [display]
@@ -18,3 +19,4 @@ config/features=PackedStringArray("4.1", "Forward Plus")
 window/size/viewport_width=3840
 window/size/viewport_height=2160
 window/size/mode=2
+window/stretch/mode="viewport"
