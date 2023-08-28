@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://vmh2prf6swv1"]
+
+[node name="Move_Here_Target" type="Node2D"]
