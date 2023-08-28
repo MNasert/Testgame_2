@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgkfldt4mpglq"]
+
+[ext_resource type="PackedScene" uid="uid://n2adqeicfa7" path="res://Utils/SceneChanger.tscn" id="1_onf0p"]
+
+[node name="LevelSelection" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SceneChanger" parent="." instance=ExtResource("1_onf0p")]
+offset_left = -1837.0
+offset_top = -1016.0
+offset_right = -1468.0
+offset_bottom = -843.0
+text = "Level1"
+
+[node name="SceneChanger2" parent="." instance=ExtResource("1_onf0p")]
+offset_left = -1888.0
+offset_top = 777.0
+offset_right = -1536.0
+offset_bottom = 1056.0
+text = "Quit"
+ScenePath = "res://MenuScreens/MainMenu.tscn"
