@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c641qkorypn8y"]
+
+[ext_resource type="Script" path="res://Entities/Projectiles/Scripts/SimpleBullet.gd" id="1_0i2nr"]
+
+[node name="SimpleBullet" type="Node2D"]
+script = ExtResource("1_0i2nr")
+
+[node name="BulletAnim" type="AnimatedSprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[connection signal="animation_finished" from="BulletAnim" to="." method="_on_bullet_anim_animation_finished"]

@@ -1,11 +1,30 @@
 extends Node2D
 
+var target: Node2D = null
 
-# Called when the node enters the scene tree for the first time.
+@export var speed: float = 0
+@export var hp: float = 0
+@export var damage: float = 0
+
+func init(pos: Vector2):
+	self.position = pos
+
 func _ready():
-	pass # Replace with function body.
+	add_to_group("Enemies")
 
+func move(delta):
+	if self.target == null:
+		self.target = get_tree().get_nodes_in_group("Player")[0]
+		return
+	var movevec = Vector2(self.target.position.x - self.position.x, 0).normalized()
+	self.position += self.speed * movevec * delta
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	self.move(delta)
+
+func _on_area_2d_area_entered(area):
+	var bullet = area.get_parent()
+	self.hp -= bullet.damage
+	bullet.hp -= 1
+	if self.hp <= 0:
+		self.queue_free()
