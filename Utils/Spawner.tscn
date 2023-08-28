@@ -6,3 +6,8 @@
 script = ExtResource("1_emlld")
 
 [node name="Wavetimer" type="Timer" parent="."]
+
+[node name="SpawnTimeout" type="Timer" parent="."]
+
+[connection signal="timeout" from="Wavetimer" to="." method="_on_wavetimer_timeout"]
+[connection signal="timeout" from="SpawnTimeout" to="." method="_on_spawn_timeout_timeout"]
