@@ -14,6 +14,7 @@ var firerate_cooldown: float
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Player")
+	$Body.play("default")
 
 func get_inputs() -> Array[bool]:
 	var inputs: Array[bool] = [0, 0, 0, 0, 0]
