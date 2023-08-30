@@ -23,3 +23,5 @@ timeout_seconds = 10.0
 
 [node name="Move_Here_Target" parent="LevelLogic" index="1" instance=ExtResource("5_rqn2t")]
 position = Vector2(4825, -180)
+
+[connection signal="reached_target" from="LevelLogic/Move_Here_Target" to="LevelLogic" method="_on_move_here_target_reached_target"]
