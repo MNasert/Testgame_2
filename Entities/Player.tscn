@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b32nkpybl2mt1"]
+[gd_scene load_steps=5 format=3 uid="uid://b32nkpybl2mt1"]
 
 [ext_resource type="Script" path="res://Entities/Player.gd" id="1_sr5nq"]
 [ext_resource type="SpriteFrames" uid="uid://cylcer5ribpdn" path="res://Graphics/Animations/Player.tres" id="2_k1chx"]
+[ext_resource type="PackedScene" uid="uid://ctsenx6i6vhmk" path="res://Entities/Projectiles/Derivates/CarrotBullet.tscn" id="2_tyif5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ajp8"]
 radius = 165.0
@@ -12,7 +13,8 @@ script = ExtResource("1_sr5nq")
 speed = 200.0
 firerate = 1.0
 damage = 1
-hp = 1
+hp = 100
+bullet = ExtResource("2_tyif5")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_k1chx")
