@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://vmh2prf6swv1"]
+[gd_scene load_steps=4 format=3 uid="uid://vmh2prf6swv1"]
 
 [ext_resource type="Script" path="res://Utils/Scripts/Move_Here_Target.gd" id="1_iutbd"]
+[ext_resource type="SpriteFrames" uid="uid://cbim4qx0amcxd" path="res://Graphics/Animations/TargetMarker.tres" id="2_miqk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_godpn"]
+size = Vector2(20, 22.9478)
 
 [node name="Move_Here_Target" type="Node2D"]
 script = ExtResource("1_iutbd")
@@ -8,3 +12,12 @@ script = ExtResource("1_iutbd")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 34)
+scale = Vector2(52.28, 42.88)
+shape = SubResource("RectangleShape2D_godpn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.998736, 1)
+sprite_frames = ExtResource("2_miqk4")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
