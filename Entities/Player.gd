@@ -46,7 +46,7 @@ func shoot(inputs: Array[bool]):
 	if not self.can_shoot:
 		return
 	var new_bullet = self.bullet.instantiate()
-	new_bullet.init(self.global_position, (Vector2(1, 0) * $Body.flip_h + Vector2(-1, 0) * $Body.flip_h),
+	new_bullet.init(self.global_position, (Vector2(1, 0) * float($Body.flip_h) + Vector2(-1, 0) * float($Body.flip_h)),
 					self.damage, self.pierce)
 	get_tree().get_root().add_child(new_bullet)
 	# $Weapon.play("default", ((fps of anim) * self.firerate) * (frames_of_anim))
@@ -65,7 +65,8 @@ func _process(delta):
 
 func _on_area_2d_area_entered(area):
 	var enemy = area.get_parent()
-	print(enemy)
+	if enemy not in get_tree().get_nodes_in_group("Enemies"):
+		return
 	self.hp -= enemy.damage
 
 func _on_firerate_timeout_timeout():

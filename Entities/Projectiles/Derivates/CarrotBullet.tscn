@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctsenx6i6vhmk"]
+
+[ext_resource type="PackedScene" uid="uid://c641qkorypn8y" path="res://Entities/Projectiles/SimpleBullet.tscn" id="1_6n6gm"]
+[ext_resource type="SpriteFrames" uid="uid://cuibldxjwdk47" path="res://Graphics/Animations/SimpleBullet.tres" id="2_rimpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acyol"]
+size = Vector2(20, 13)
+
+[node name="SimpleBullet" instance=ExtResource("1_6n6gm")]
+scale = Vector2(4, 4)
+speed = 200.0
+
+[node name="BulletAnim" parent="." index="0"]
+sprite_frames = ExtResource("2_rimpy")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_acyol")

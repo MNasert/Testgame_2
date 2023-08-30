@@ -1,10 +1,12 @@
 extends Node2D
 
-var speed: float
-var damage: int
-var hp: int
-var penetrate_num:int
-var range: float
+@export var speed: float = 0
+var damage: int = 0
+var hp: int = 0
+var penetrate_num:int = 0
+var range: float = 0
+var travel_dist: float = 0
+var movevec: Vector2 = Vector2.ZERO
 
 func init(pos: Vector2, direction: Vector2, dmg: int, pierce: int):
 	self.position = pos
