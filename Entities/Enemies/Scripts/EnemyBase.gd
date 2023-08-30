@@ -17,6 +17,7 @@ func move(delta):
 		self.target = get_tree().get_nodes_in_group("Player")[0]
 		return
 	var movevec = Vector2(self.target.position.x - self.position.x, 0).normalized()
+	$Body.flip_h = movevec.x > 0 
 	self.position += self.speed * movevec * delta
 
 func _process(delta):
