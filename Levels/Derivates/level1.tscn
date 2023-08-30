@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0fulwbbcpq31"]
+[gd_scene load_steps=8 format=3 uid="uid://c0fulwbbcpq31"]
 
 [ext_resource type="PackedScene" uid="uid://crbeqsdfprg41" path="res://Levels/LevelBase.tscn" id="1_b78mh"]
 [ext_resource type="PackedScene" uid="uid://b32nkpybl2mt1" path="res://Entities/Player.tscn" id="2_12dfy"]
@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://Levels/Derivates/LevelConfigs/Lvl1.gd" id="3_jt4ro"]
 [ext_resource type="PackedScene" uid="uid://bjh8fqnqnfjvd" path="res://Entities/Enemies/Derivates/EnemyGround.tscn" id="3_k5f87"]
 [ext_resource type="PackedScene" uid="uid://vmh2prf6swv1" path="res://Utils/Move_Here_Target.tscn" id="5_rqn2t"]
+[ext_resource type="Texture2D" uid="uid://dtmipmfnqjlh3" path="res://Graphics/Sprites/backgrund 1.png" id="7_v5371"]
 
 [node name="LevelBase" instance=ExtResource("1_b78mh")]
 
 [node name="Player" parent="." index="0" instance=ExtResource("2_12dfy")]
-position = Vector2(0, 5)
+position = Vector2(3, 51)
 
 [node name="LevelLogic" parent="." index="1"]
 script = ExtResource("3_jt4ro")
@@ -29,5 +30,25 @@ position = Vector2(-3737, -35)
 Enemies = Array[PackedScene]([ExtResource("3_k5f87")])
 numEnemiesPerType = Array[int]([10])
 timeout_seconds = 15.0
+
+[node name="Background" type="Sprite2D" parent="." index="2"]
+z_index = -1
+position = Vector2(1665, -1353)
+texture = ExtResource("7_v5371")
+
+[node name="Background" type="Sprite2D" parent="Background" index="0"]
+z_index = -1
+position = Vector2(6152, 34)
+texture = ExtResource("7_v5371")
+
+[node name="Background2" type="Sprite2D" parent="Background" index="1"]
+z_index = -1
+position = Vector2(-12303, -50)
+texture = ExtResource("7_v5371")
+
+[node name="Background" type="Sprite2D" parent="Background/Background2" index="0"]
+z_index = -1
+position = Vector2(6152, 34)
+texture = ExtResource("7_v5371")
 
 [connection signal="reached_target" from="LevelLogic/Move_Here_Target" to="LevelLogic" method="_on_move_here_target_reached_target"]
