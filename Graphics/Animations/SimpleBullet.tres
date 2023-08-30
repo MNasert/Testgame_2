@@ -2,31 +2,31 @@
 
 [ext_resource type="Texture2D" uid="uid://dcocdh23kb4hb" path="res://Graphics/Animations/Data/Ammo/Sprite-0003-Sheet.png" id="1_os103"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uuxep"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mslux"]
 atlas = ExtResource("1_os103")
 region = Rect2(0, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4gj2y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r03i8"]
 atlas = ExtResource("1_os103")
-region = Rect2(24, 0, 24, 24)
+region = Rect2(0, 30, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xee0b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jobeo"]
 atlas = ExtResource("1_os103")
-region = Rect2(48, 0, 24, 24)
+region = Rect2(0, 60, 24, 24)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uuxep")
+"texture": SubResource("AtlasTexture_mslux")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4gj2y")
+"texture": SubResource("AtlasTexture_r03i8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xee0b")
+"texture": SubResource("AtlasTexture_jobeo")
 }],
 "loop": false,
 "name": &"default",
-"speed": 6.0
+"speed": 21.0
 }]

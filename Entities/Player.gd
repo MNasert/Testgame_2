@@ -2,17 +2,16 @@ extends Node2D
 
 @export var speed: float = 0
 @export var firerate: float = 0  # shots/s
-@export var damage: int = 0
 @export var hp: int = 0
 @export var pierce: int = 0
-
-
 @export var bullet: PackedScene
 
 var can_shoot = true
 var firerate_cooldown: float
-# Called when the node enters the scene tree for the first time.
+var money: float = 0
+
 func _ready():
+	$PlayerMoney.text = "Player Money = %value" % str(round(self.money))
 	add_to_group("Player")
 	$Body.play("default")
 
@@ -46,13 +45,13 @@ func shoot(inputs: Array[bool]):
 	if not self.can_shoot:
 		return
 	var new_bullet = self.bullet.instantiate()
-	new_bullet.init(self.global_position, (Vector2(1, 0) * float($Body.flip_h) + Vector2(-1, 0) * float($Body.flip_h)),
-					self.damage, self.pierce)
+	new_bullet.init(self.global_position, (Vector2(1, 0) * float(not $Body.flip_h) + Vector2(-1, 0) * float($Body.flip_h)),
+					self.pierce, self)
 	get_tree().get_root().add_child(new_bullet)
 	# $Weapon.play("default", ((fps of anim) * self.firerate) * (frames_of_anim))
 	self.can_shoot = false
 	$FirerateTimeout.start(1./self.firerate)
-	
+
 func _process(delta):
 	var inputs = self.get_inputs()
 	self.move(inputs, delta)
@@ -71,3 +70,7 @@ func _on_area_2d_area_entered(area):
 
 func _on_firerate_timeout_timeout():
 	self.can_shoot = true
+
+func grant(money: float):
+	$PlayerMoney.text = "Player Money = %value" % str(round(self.money))
+	self.money += money

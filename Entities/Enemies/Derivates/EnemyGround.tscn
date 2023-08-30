@@ -11,6 +11,7 @@ height = 554.0
 speed = 100.0
 hp = 100.0
 damage = 5.0
+value = 10.0
 
 [node name="Body" parent="." index="0"]
 sprite_frames = ExtResource("2_qkaea")

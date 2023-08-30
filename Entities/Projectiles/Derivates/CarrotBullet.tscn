@@ -8,7 +8,9 @@ size = Vector2(20, 13)
 
 [node name="SimpleBullet" instance=ExtResource("1_6n6gm")]
 scale = Vector2(4, 4)
-speed = 200.0
+speed = 800.0
+range = 4000.0
+damage = 50
 
 [node name="BulletAnim" parent="." index="0"]
 sprite_frames = ExtResource("2_rimpy")
