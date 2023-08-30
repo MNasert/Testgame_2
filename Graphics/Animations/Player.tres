@@ -1,8 +1,45 @@
-[gd_resource type="SpriteFrames" format=3 uid="uid://cylcer5ribpdn"]
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cylcer5ribpdn"]
+
+[ext_resource type="Texture2D" uid="uid://j6ua28qokx1a" path="res://Graphics/Animations/Data/Playerthing/playathing-Sheet.png" id="1_d0m41"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op2n8"]
+atlas = ExtResource("1_d0m41")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sm8i"]
+atlas = ExtResource("1_d0m41")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xdyg"]
+atlas = ExtResource("1_d0m41")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6g4b"]
+atlas = ExtResource("1_d0m41")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2fb5"]
+atlas = ExtResource("1_d0m41")
+region = Rect2(2048, 0, 512, 512)
 
 [resource]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op2n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sm8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xdyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6g4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2fb5")
+}],
 "loop": true,
 "name": &"default",
 "speed": 10.0

@@ -65,6 +65,7 @@ func _process(delta):
 
 func _on_area_2d_area_entered(area):
 	var enemy = area.get_parent()
+	print(enemy)
 	self.hp -= enemy.damage
 
 func _on_firerate_timeout_timeout():

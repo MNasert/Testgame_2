@@ -25,6 +25,9 @@ func _process(delta):
 
 func _on_area_2d_area_entered(area):
 	var bullet = area.get_parent()
+	if bullet not in get_tree().get_nodes_in_group("Projectiles"):
+		return
+	print(bullet)
 	self.hp -= bullet.damage
 	bullet.hp -= 1
 	if self.hp <= 0:
