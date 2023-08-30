@@ -39,7 +39,7 @@ func move(inputs: Array[bool], delta: float):
 		$Body.flip_h = false
 	if not (inputs[2] or inputs[3]):
 		$Body.play("default")
-	elif not $Body.is_playing("walking"):
+	else:
 		$Body.play("walking")
 	self.position += movevec * self.speed * delta
 

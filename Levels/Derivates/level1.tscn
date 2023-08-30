@@ -24,4 +24,10 @@ timeout_seconds = 10.0
 [node name="Move_Here_Target" parent="LevelLogic" index="1" instance=ExtResource("5_rqn2t")]
 position = Vector2(4825, -180)
 
+[node name="Spawner2" parent="LevelLogic" index="2" instance=ExtResource("3_84ibf")]
+position = Vector2(-3737, -35)
+Enemies = Array[PackedScene]([ExtResource("3_k5f87")])
+numEnemiesPerType = Array[int]([10])
+timeout_seconds = 15.0
+
 [connection signal="reached_target" from="LevelLogic/Move_Here_Target" to="LevelLogic" method="_on_move_here_target_reached_target"]

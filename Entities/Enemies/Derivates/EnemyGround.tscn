@@ -8,9 +8,9 @@ radius = 135.0
 height = 554.0
 
 [node name="EnemyBase" instance=ExtResource("1_x8ydk")]
-speed = 100.0
+speed = 150.0
 hp = 100.0
-damage = 5.0
+damage = 10.0
 value = 10.0
 
 [node name="Body" parent="." index="0"]
