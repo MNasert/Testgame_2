@@ -16,7 +16,11 @@ func _ready():
 
 func move(delta):
 	if self.target == null:
-		self.target = get_tree().get_nodes_in_group("Player")[0]
+		var players = get_tree().get_nodes_in_group("Player")
+		if len(players) == 0:
+			self.set_process(false)
+			return
+		self.target = players[0]
 		return
 	var movevec = Vector2(self.target.position.x - self.position.x, 0).normalized()
 	$Body.flip_h = movevec.x > 0 
