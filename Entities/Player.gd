@@ -61,10 +61,7 @@ func _process(delta):
 	self.move(inputs, delta)
 	self.shoot(inputs)
 	if self.hp <= 0:
-		self.queue_free()
-		for entity in get_tree().get_nodes_in_group("Enemies"):
-			entity.queue_free()
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		self.die()
 
 func _on_area_2d_area_entered(area):
 	var enemy = area.get_parent()
@@ -82,4 +79,9 @@ func grant(money: float):
 func updateUI():
 	var newstring = "Player Money= %d" % self.money
 	$PlayerMoney.set_text(newstring)
-	
+
+func die():
+	self.queue_free()
+	for child in get_tree().get_root().get_children():
+		child.queue_free()
+	get_tree().change_scene_to_file("res://MenuScreens/MainMenu.tscn")
