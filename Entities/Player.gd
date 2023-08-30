@@ -11,7 +11,7 @@ var firerate_cooldown: float
 var money: float = 0
 
 func _ready():
-	$PlayerMoney.text = "Player Money = %value" % str(round(self.money))
+	self.updateUI()
 	add_to_group("Player")
 	$Body.play("default")
 
@@ -72,5 +72,10 @@ func _on_firerate_timeout_timeout():
 	self.can_shoot = true
 
 func grant(money: float):
-	$PlayerMoney.text = "Player Money = %value" % str(round(self.money))
 	self.money += money
+	self.updateUI()
+
+func updateUI():
+	var newstring = "Player Money= %d" % self.money
+	$PlayerMoney.set_text(newstring)
+	
