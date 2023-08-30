@@ -1,11 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0fulwbbcpq31"]
+[gd_scene load_steps=7 format=3 uid="uid://c0fulwbbcpq31"]
 
 [ext_resource type="PackedScene" uid="uid://crbeqsdfprg41" path="res://Levels/LevelBase.tscn" id="1_b78mh"]
 [ext_resource type="PackedScene" uid="uid://b32nkpybl2mt1" path="res://Entities/Player.tscn" id="2_12dfy"]
+[ext_resource type="PackedScene" uid="uid://bp2mynuxbygsi" path="res://Utils/Spawner.tscn" id="3_84ibf"]
+[ext_resource type="Script" path="res://Levels/Derivates/LevelConfigs/Lvl1.gd" id="3_jt4ro"]
+[ext_resource type="PackedScene" uid="uid://bjh8fqnqnfjvd" path="res://Entities/Enemies/Derivates/EnemyGround.tscn" id="3_k5f87"]
+[ext_resource type="PackedScene" uid="uid://vmh2prf6swv1" path="res://Utils/Move_Here_Target.tscn" id="5_rqn2t"]
 
 [node name="LevelBase" instance=ExtResource("1_b78mh")]
 
 [node name="Player" parent="." index="0" instance=ExtResource("2_12dfy")]
 position = Vector2(0, 5)
 
-[node name="Node2D" type="Node2D" parent="." index="1"]
+[node name="LevelLogic" parent="." index="1"]
+script = ExtResource("3_jt4ro")
+
+[node name="Spawner" parent="LevelLogic" index="0" instance=ExtResource("3_84ibf")]
+position = Vector2(2577, 4)
+Enemies = Array[PackedScene]([ExtResource("3_k5f87")])
+numEnemiesPerType = Array[int]([3])
+timeout_seconds = 10.0
+
+[node name="Move_Here_Target" parent="LevelLogic" index="1" instance=ExtResource("5_rqn2t")]
+position = Vector2(4825, -180)

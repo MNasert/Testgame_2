@@ -12,6 +12,7 @@ func init(pos: Vector2):
 
 func _ready():
 	add_to_group("Enemies")
+	$Body.play("default")
 
 func move(delta):
 	if self.target == null:
