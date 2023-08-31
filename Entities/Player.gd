@@ -68,6 +68,7 @@ func _on_area_2d_area_entered(area):
 	if enemy not in get_tree().get_nodes_in_group("Enemies"):
 		return
 	self.hp -= enemy.damage
+	self.updateUI()
 
 func _on_firerate_timeout_timeout():
 	self.can_shoot = true
@@ -79,6 +80,8 @@ func grant(money: float):
 func updateUI():
 	var newstring = "Player Money= %d" % self.money
 	$PlayerMoney.set_text(newstring)
+	newstring = "Health= %d" % self.hp
+	$Health.set_text(newstring)
 
 func die():
 	self.queue_free()

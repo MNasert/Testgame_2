@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp2mynuxbygsi"]
+[gd_scene load_steps=3 format=3 uid="uid://bp2mynuxbygsi"]
 
 [ext_resource type="Script" path="res://Utils/Scripts/Spawner.gd" id="1_emlld"]
+[ext_resource type="Texture2D" uid="uid://coim5oovexvn" path="res://Graphics/Sprites/enemy mark1.png" id="2_p6iaj"]
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_emlld")
@@ -8,6 +9,10 @@ script = ExtResource("1_emlld")
 [node name="Wavetimer" type="Timer" parent="."]
 
 [node name="SpawnTimeout" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_p6iaj")
 
 [connection signal="timeout" from="Wavetimer" to="." method="_on_wavetimer_timeout"]
 [connection signal="timeout" from="SpawnTimeout" to="." method="_on_spawn_timeout_timeout"]

@@ -36,12 +36,22 @@ position = Vector2(0, -750)
 
 [node name="PlayerMoney" type="Label" parent="."]
 modulate = Color(1, 0.176471, 0, 1)
-offset_left = -210.0
-offset_top = -317.375
-offset_right = 7.0
-offset_bottom = -291.375
+offset_left = -216.0
+offset_top = -395.221
+offset_right = 1.0
+offset_bottom = -369.221
 scale = Vector2(2, 2)
 text = "Player Money= 0"
+clip_text = true
+
+[node name="Health" type="Label" parent="."]
+modulate = Color(1, 0.176471, 0, 1)
+offset_left = -108.0
+offset_top = -358.294
+offset_right = 109.0
+offset_bottom = -332.294
+scale = Vector2(2, 2)
+text = "Health= 100"
 clip_text = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

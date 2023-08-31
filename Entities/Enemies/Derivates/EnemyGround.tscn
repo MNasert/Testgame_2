@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjh8fqnqnfjvd"]
+[gd_scene load_steps=5 format=3 uid="uid://bjh8fqnqnfjvd"]
 
 [ext_resource type="PackedScene" uid="uid://pdgmwxi037fv" path="res://Entities/Enemies/EnemyBase.tscn" id="1_x8ydk"]
 [ext_resource type="SpriteFrames" uid="uid://culxh3dsvyxxr" path="res://Graphics/Animations/Enemy_1.tres" id="2_qkaea"]
@@ -6,6 +6,17 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fcu0t"]
 radius = 135.0
 height = 554.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n1swh"]
+emission_shape = 3
+emission_box_extents = Vector3(80, 20, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 8, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 5.0
+scale_max = 9.0
+color = Color(0.752941, 0.941176, 0.960784, 1)
 
 [node name="EnemyBase" instance=ExtResource("1_x8ydk")]
 speed = 150.0
@@ -21,3 +32,10 @@ position = Vector2(3, -6)
 shape = SubResource("CapsuleShape2D_fcu0t")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
+position = Vector2(0, 200)
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_n1swh")
+lifetime = 20.0
+fixed_fps = 60
+draw_order = 0
+trail_lifetime = 10.0
